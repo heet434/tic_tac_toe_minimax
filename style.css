@@ -1,0 +1,35 @@
+*{
+    margin:0;
+    padding: 0;
+}
+header div{
+    position: fixed;
+    top: 0;
+}
+footer div{
+    position: fixed;
+    bottom: 0;
+    padding: 3em;
+    text-decoration: none;
+}
+footer div ul{
+    list-style: none;
+}
+.board{
+    display: grid;
+    width: 50vh;
+    height: 50vh;
+    transform-origin: center;
+    margin: auto;
+    translate: 0% 50%;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.board div{
+    border: 1px solid black;
+}
+.board div:hover{
+    background-color: aquamarine;
+    box-shadow: 5px 5px black;
+    cursor: grab;
+}
