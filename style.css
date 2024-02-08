@@ -43,6 +43,13 @@ footer div{
     position: inherit;
     right: 2em;
 }
+
+#again:hover{
+    background-color: rgba(42, 155, 242, 0.8);
+    box-shadow: 2px 2px black;
+    cursor: pointer;
+}
+
 footer div ul{
     list-style: none;
 }
