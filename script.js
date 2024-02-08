@@ -291,3 +291,23 @@ let eval = function(board, currentPlayer, prevPlayer){
         //checkig if there is a tie
     return score;
 }
+
+playAgain = function(){
+    board = [
+        ['','',''],
+        ['','',''],
+        ['','','']
+    ];
+    winner = null;
+    winningIndexes = [];
+    prevMove = 'x';
+    currentMove = 'o';
+    for(let i=0;i<3;i++){
+        for(let j=0;j<3;j++){
+            document.getElementById(`${i}${j}`).style.backgroundColor = 'rgba(255, 255, 255, 0)';
+            document.getElementById(`${i}${j}`).style.backgroundImage = 'none';
+        }
+    }
+    document.getElementById('winner').style.display= 'none';
+    document.getElementById('add_ai_turn').style.display = 'block';
+}
