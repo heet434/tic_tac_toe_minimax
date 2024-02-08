@@ -12,7 +12,7 @@ var winningIndexes = [];
 
 var prevMove = 'x';
 var currentMove = 'o';
-let maxdepth = 9;
+let maxdepth = Infinity;
 
 function addMark(id){
     let x = Number(id[0]);
