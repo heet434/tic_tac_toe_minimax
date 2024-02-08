@@ -1,10 +1,21 @@
 *{
     margin:0;
-    padding: 0;
+    padding: 0;;
 }
-header div{
-    position: fixed;
-    top: 0;
+body{
+    font-family: 'Arial', sans-serif;
+}
+header{
+    background-color: rgba(0, 255, 170, 0.4);
+    text-align: center;
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+header h1{
+    font-size: 3rem;
+    color: black;
 }
 footer div{
     position: fixed;
@@ -15,21 +26,72 @@ footer div{
 footer div ul{
     list-style: none;
 }
+#add_ai_turn{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 150px;
+    font-size: 1rem;
+    color: black;
+    background-color: rgba(146, 127, 255, 0.5);
+    padding: 0.5rem;
+    border-radius: 10px;
+    width: 20vh;
+    height: 10vh;
+    z-index: 1;
+    text-align: center;
+}
+
+#add_ai_turn:hover{
+    background-color: rgba(146, 127, 255, 0.8);
+    box-shadow: 2px 2px black;
+    cursor: pointer;
+}
+
+#winner{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: black;
+    text-shadow: 1px 1px black;
+    text-overflow: initial;
+    white-space: initial;
+    background-color: rgba(127, 255, 212, 0.5);
+    padding: 0.5rem;
+    border-radius: 10px;
+    width: 50vh;
+    height: 50vh;
+    z-index: 1;
+    display: none;
+}
+#winnertext{
+    font-size: 5rem;
+    font-weight: bold;
+}
 .board{
+    position: fixed;
     display: grid;
     width: 50vh;
     height: 50vh;
-    transform-origin: center;
     margin: auto;
-    translate: 0% 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
     grid-template-columns: repeat(3, 1fr);
 }
 
 .board div{
     border: 1px solid black;
+    background-size:contain;
 }
 .board div:hover{
     background-color: aquamarine;
-    box-shadow: 5px 5px black;
-    cursor: grab;
+    /* box-shadow: 5px 5px rgb(0, 0, 0, 0.3); */
+
+    outline: 5px solid rgb(0, 0, 0, 0.3);
+    /* border-style: ridge; */
+    cursor: pointer;
 }

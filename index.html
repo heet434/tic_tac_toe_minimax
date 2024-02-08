@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" type="text/css" href="style.css"></link>
 </head>
 <body>
@@ -13,16 +13,21 @@
         </div>
     </header>
     <main>
+        <div id="add_ai_turn" onclick = "ai_turn()">
+            Click this box to make AI take a turn
+            <h1>AI turn</h1>
+        </div>
+        <div id="winner"><h1 id="winnertext"></h1></div>
         <div class="board">
-            <div id="11" onclick="addMark()"></div>
-            <div id="12" onclick="addMark()"></div>
-            <div id="13" onclick="addMark()"></div>
-            <div id="21" onclick="addMark()"></div>
-            <div id="22" onclick="addMark()"></div>
-            <div id="23" onclick="addMark()"></div>
-            <div id="31" onclick="addMark()"></div>
-            <div id="32" onclick="addMark()"></div>
-            <div id="33" onclick="addMark()"></div>
+            <div id="00" onclick="addMark(this.id)"></div>
+            <div id="01" onclick="addMark(this.id)"></div>
+            <div id="02" onclick="addMark(this.id)"></div>
+            <div id="10" onclick="addMark(this.id)"></div>
+            <div id="11" onclick="addMark(this.id)"></div>
+            <div id="12" onclick="addMark(this.id)"></div>
+            <div id="20" onclick="addMark(this.id)"></div>
+            <div id="21" onclick="addMark(this.id)"></div>
+            <div id="22" onclick="addMark(this.id)"></div>
         </div>
     </main>
     <footer>
