@@ -66,9 +66,10 @@ footer div ul{
     background-color: rgba(146, 127, 255, 0.5);
     padding: 0.5rem;
     border-radius: 10px;
-    width: 20vh;
+    width: 30vw; 
     z-index: 1;
     text-align: center;
+    display: block;
 }
 
 #add_ai_turn:hover{
@@ -105,7 +106,7 @@ footer div ul{
 .board{
     /* position: fixed; */
     position: relative;
-    top: 20px;
+    top: 40px;
     display: grid;
     width: 50vh;
     height: 50vh;
@@ -127,4 +128,95 @@ footer div ul{
     outline: 5px solid rgb(0, 0, 0, 0.3);
     /* border-style: ridge; */
     cursor: pointer;
+}
+main{
+    display: block;
+}
+#ai_time{
+    position: relative;
+    top: 50px;
+    text-align: center;
+}
+#algo{
+    position: relative;
+    top: 20px;
+    margin: auto;
+    font-size: 1rem;
+    color: black;
+    background-color: rgba(146, 127, 255, 0.5);
+    padding: 0.5rem;
+    border-radius: 10px;
+    width: fit-content;
+    z-index: 1;
+    text-align: center;
+    display: block;
+}
+#algo:hover{
+    background-color: rgba(146, 127, 255, 0.8);
+    box-shadow: 2px 2px black;
+    cursor: pointer;
+}
+#depth{
+    position: relative;
+    top: 30px;
+    margin: auto;
+    font-size: 1rem;
+    color: black;
+    background-color: rgba(146, 127, 255, 0.5);
+    padding: 0.5rem;
+    border-radius: 10px;
+    width: fit-content;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    gap: 4px;
+}
+#depth input{
+    margin: auto;
+    width: 3rem;
+    height: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    color: black;
+    background-color: rgba(231, 228, 251, 0.881);
+    padding: 0.5rem;
+    border-radius: 10px;
+    z-index: 1;
+    text-align: center;
+    display: block;
+}
+#depth button{
+    color: black;
+    background-color: rgba(231, 228, 251, 0.881);
+    padding: 0.5rem;
+    border-radius: 10px;
+    z-index: 1;
+    text-align: center;
+    display: block;
+}
+#depth button:hover{
+    background-color: rgba(231, 228, 251, 0.8);
+    box-shadow: 2px 2px black;
+    cursor: pointer;
+}
+#depth p{
+    margin: auto;
+    font-size: 1rem;
+    color: black;
+    z-index: 1;
+    text-align: center;
+    display: block;
+    font: 1em sans-serif;
+}
+#ai_time{
+    border: 1px solid black;
+    width: fit-content;
+    margin: auto;
+}
+#chartContainer{
+    position: fixed;
+    right: 0;
+    width: 400px;
+    height: 400px;
+    top: 200px;
 }

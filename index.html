@@ -16,6 +16,14 @@
         <div id="add_ai_turn" onclick = "ai_turn()">
             Click this box to make <b>AI</b> take a turn
         </div>
+        <div id="algo" onclick="change_algo()">
+            Algorithm: Simple Minimax, click to change.
+        </div>
+        <div id="depth">
+            <input type="number" id="depth_input" min="1" max="Infinity">
+            <button onclick="change_depth()">Change Depth</button>
+            <p>Default max depth of algorithm is set to infinity.</p>
+        </div>
         <div id="winner"><h1 id="winnertext"></h1></div>
         <div class="board">
             <div id="00" onclick="addMark(this.id)"></div>
@@ -27,6 +35,10 @@
             <div id="20" onclick="addMark(this.id)"></div>
             <div id="21" onclick="addMark(this.id)"></div>
             <div id="22" onclick="addMark(this.id)"></div>
+        </div>
+        <div id="chartContainer"></div>
+        <div id="ai_time">
+            The time taken by AI to take turn is: 
         </div>
     </main>
     <footer>
@@ -44,5 +56,6 @@
         <div id="again" onclick="playAgain()">click here to <h2>Play Again</h2></div>
     </footer>
     <script src="script.js"></script>
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"> </script>
 </body>
 </html>
