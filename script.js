@@ -183,6 +183,7 @@ playAgain = function(){
     document.getElementById('depth').style.display = 'flex';
     document.getElementById('algo').style.display = 'block';
     times = [];
+    nodes = [];
 }
 
 change_depth = function(){
