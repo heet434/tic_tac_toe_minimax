@@ -14,10 +14,12 @@ var currentMove = 'o';
 let maxdepth = Infinity;
 
 let times = [];
+let nodes = [];
+let nodesExpanded = [0,0];
 
 let minimax = function (board, depth, player, currentMove, prevMove){
     var best = null;
-    
+    nodesExpanded[0]++;
     var newBoard = board;
     if(player=='comp'){
         best = [-1,-1,-Infinity];
@@ -191,6 +193,7 @@ change_depth = function(){
 let minimax_with_alpha_beta = function(board, depth, alpha, beta, player, currentMove, prevMove){   
     var best = null;
     var newBoard = board;
+    nodesExpanded[1]++;
     if(player=='comp'){
         best = [-1,-1,-Infinity];
     }else{
@@ -408,7 +411,11 @@ function ai_turn(){
         document.getElementById('ai_time').innerText = `The time taken by ${algorithm} to take turn is: ${endTime-startTime}ms
         The time taken by ${algorithm2} to take turn is: ${endTime2-startTime2}ms`;
         times.push([endTime-startTime, endTime2-startTime2]);
+        document.getElementById('nodes_expanded').innerText = `The number of nodes expanded by ${algorithm} is: ${nodesExpanded[0]}
+        The number of nodes expanded by ${algorithm2} is: ${nodesExpanded[1]}`;
+        nodes.push([nodesExpanded[0],nodesExpanded[1]]);
         displayGraph();
+        displayGraphNodes();
         var x = nextTurn[0];
         var y = nextTurn[1];
         board[x][y] = currentSign;
@@ -456,4 +463,41 @@ function displayGraph(){
             }]
         });
         chart.render();
+}
+
+function displayGraphNodes(){
+    let data = [[],[]];
+    for(let i=0;i<times.length;i++){
+        data[0].push({x: i+1, y: nodes[i][0]});
+    };
+    for(let i=0;i<times.length;i++){
+        data[1].push({x: i+1, y: nodes[i][1]});
+    };
+    console.log(data);
+    var chart = new CanvasJS.Chart("chartContainer2", {
+        
+        animationEnabled: true,
+        title:{
+            text: "Cumulative Nodes expanded"
+        },
+        axisX: {
+            title: "Turn number"
+        },
+        axisY: {
+            title: "Cumulative number of nodes"
+        },
+        data: [{
+            type: "line",
+            showInLegend: true,
+            name: "Simple Minimax",
+            dataPoints: data[0]
+        },
+        {
+            type: "line",
+            showInLegend: true,
+            name: "Minimax with Alpha-Beta Pruning",
+            dataPoints: data[1]
+        }]
+    });
+    chart.render();
 }
